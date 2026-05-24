@@ -1,10 +1,10 @@
 # Branches
 
-The project has 1 main branch, aptly called **main**.
+The project has 1 master branch, aptly called **master**.
 This branch contains the latest development that will be tagged for the next release once it's considered stable.
 
-New features should be implemented in **feature branches** created from **main**.
-When the feature is ready, a pull request is created and it'll be merged into **main** when it is successfully reviewed and accepted.
+New features should be implemented in **feature branches** created from **master**.
+When the feature is ready, a pull request is created and it'll be merged into **master** when it is successfully reviewed and accepted.
 
 To release a new version of the application, when main is considered stable, a tag is created on the version bump commit in **main** and the release is generated (a tag is applied to git, the release note is finalized, binaries are built,...).
 

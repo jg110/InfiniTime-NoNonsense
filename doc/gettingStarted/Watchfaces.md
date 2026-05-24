@@ -1,6 +1,6 @@
 # Watchfaces
 
-InfiniTime has 6 apps on the `main` branch at the time of writing.
+InfiniTime has 6 apps on the `master` branch at the time of writing.
 
 ## List of apps
 - Digital
