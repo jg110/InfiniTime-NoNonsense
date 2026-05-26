@@ -40,7 +40,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          git config --global --add safe.directory /__w/InfiniTime/InfiniTime
+          git config --global --add safe.directory /__w/InfiniTime-NoNonsense/InfiniTime-NoNonsense
           /opt/build.sh all
       - name: Output build size
         id: output-sizes
@@ -144,7 +144,7 @@ jobs:
       id: get-base-sha
       run: |
         # Fix for "detected dubious ownership in repository at '/__w/InfiniTime/InfiniTime'"
-        git config --global --add safe.directory /__w/InfiniTime/InfiniTime
+        git config --global --add safe.directory /__w/InfiniTime-NoNonsense/InfiniTime-NoNonsense
         echo base_sha=$(git rev-parse HEAD) >> $GITHUB_OUTPUT
 
     - name: Cache build

@@ -15,8 +15,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    env:
-      USERNAME: infinitime
     steps:
       - uses: actions/checkout@v3
 
@@ -32,7 +30,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ secrets.DOCKER_HUB_IMAGE_USERNAME || env.USERNAME }}/infinitime-build
+            ${{ secrets.DOCKER_HUB_IMAGE_USERNAME || env.USERNAME }}/infinitime_nononsense-build
           tags: |
             type=sha
             type=raw,value=latest
@@ -55,8 +53,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_IMAGE_USERNAME || env.USERNAME }}/infinitime-build:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_IMAGE_USERNAME || env.USERNAME }}/infinitime-build:buildcache,mode=max
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_IMAGE_USERNAME || env.USERNAME }}/infinitime_nononsense-build:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_IMAGE_USERNAME || env.USERNAME }}/infinitime_nononsense-build:buildcache,mode=max
 
       - name: Build
         if: github.event_name == 'pull_request'
@@ -67,4 +65,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           builder: ${{ steps.buildx.outputs.name }}
           push: false
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_IMAGE_USERNAME || env.USERNAME }}/infinitime-build:buildcache
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_IMAGE_USERNAME || env.USERNAME }}/infinitime_nononsense-build:buildcache
